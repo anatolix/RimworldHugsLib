@@ -48,3 +48,11 @@ There are no known compatibility issues at this time. Please use the [Harmony li
 
 ## Usage
 This is a public library similar to the Community Core Library, designed to be easily updateable between Rimworld versions. Feel free to use it for your own projects.
+## RimWorld 1.7 build (Waylith / .NET 10)
+
+RimWorld 1.7 replaced Unity/Mono with Ludeon's Waylith engine on a .NET 10 CoreCLR runtime. This fork converts the project to an
+SDK-style `net10.0` csproj. Game references come from the `Krafs.Rimworld.Ref` NuGet package (`UnityStubs.dll` provides the `UnityEngine`
+namespace there), Harmony is 3.0.
+
+Build (needs the .NET 10 SDK): `dotnet build -c Release` — output goes to `Mods/HugsLib/v1.7/Assemblies/`.
+Assemblies for 1.1–1.6 are kept untouched in their version folders. The NUnit test project under `Tests/` still targets the old project layout and has not been migrated.
